@@ -21,15 +21,15 @@ import utils_
 
 
 setname= 'LIVE1' #LIVE1 BSDS500 ICB 
-if setname is 'LIVE1':
-    data_path = './PATH_TO_LIVE1'
-elif setname is 'BSDS500':
-    data_path = './PATH_TO_B500'
-elif setname is 'ICB':
+if setname == 'LIVE1':
+    data_path = '/content/4/live1/gray'
+elif setname == 'BSDS500':
+    data_path = '/content/4/bsds500'
+elif setname == 'ICB':
     data_path = './PATH_TO_ICB'
 
 
-model_path = './PATH_TO_MODEL'
+model_path = '/content/JDEC/jdec.pth'
 
 model_spec = torch.load(model_path)['model']
 model = models.make(model_spec, load_sd=True).cuda()
