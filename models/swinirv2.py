@@ -898,7 +898,7 @@ class SwinTransformerV2_Ycbcr_ir_2(nn.Module):
         return x
 
 
-@register('swinv2_group_embedded')
+@register('swinv2_rgb_nomore_deepir_rgbver')
 def swinv2_ychannel_regression(use_subblock=True , depth = 12,emb_size = 180,num_heads=[6, 6, 6, 6, 6], device='cuda',in_channels = 1,embed_dim=96):
     return SwinTransformerV2_Ycbcr_ir_2(device=device,embed_dim=emb_size,mlp_ratio=2.0, depths=[6, 6, 6, 6, 6], num_heads=num_heads,pretrained_window_sizes=[0, 0, 0])
 
