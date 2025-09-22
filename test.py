@@ -22,7 +22,7 @@ import utils_
 
 setname= 'LIVE1' #LIVE1 BSDS500 ICB 
 if setname == 'LIVE1':
-    data_path = '/content/4/live1/gray'
+    data_path = '/content/live1-valid-dataset-fullsize/live1/color/qf_30/'
 elif setname == 'BSDS500':
     data_path = '/content/4/bsds500'
 elif setname == 'ICB':
