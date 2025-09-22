@@ -24,7 +24,7 @@ setname= 'LIVE1' #LIVE1 BSDS500 ICB
 if setname == 'LIVE1':
     data_root = '/content/live1-valid-dataset-fullsize/live1/color/'
 elif setname == 'BSDS500':
-    data_root = '/content/live1-valid-dataset-fullsize/bsds500/color'
+    data_root = '/content/live1-valid-dataset-fullsize/bsds500/color/'
 elif setname == 'ICB':
     data_root = './PATH_TO_ICB'
 
