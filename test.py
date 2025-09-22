@@ -38,7 +38,7 @@ batch_y = Rearrange('c (h s1) (w s2) ph pw -> (h w) c s1 s2 ph pw',s1 = 140, s2=
 batch_c = Rearrange('c (h s1) (w s2) ph pw -> (h w) c s1 s2 ph pw',s1 = 70, s2=70)
 
 save = True
-for i in range(10, 101, 10):
+for i in range(10, 91, 10):
     preds=[]
     inputs = []
     res_psnr = Averager()
