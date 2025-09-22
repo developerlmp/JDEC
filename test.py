@@ -22,11 +22,11 @@ import utils_
 
 setname= 'LIVE1' #LIVE1 BSDS500 ICB 
 if setname == 'LIVE1':
-    data_path = '/content/live1-valid-dataset-fullsize/live1/color/qf_30/'
+    data_root = '/content/live1-valid-dataset-fullsize/live1/color/'
 elif setname == 'BSDS500':
-    data_path = '/content/4/bsds500'
+    data_root = '/content/live1-valid-dataset-fullsize/bsds500/color'
 elif setname == 'ICB':
-    data_path = './PATH_TO_ICB'
+    data_root = './PATH_TO_ICB'
 
 
 model_path = '/content/JDEC/jdec.pth'
@@ -38,7 +38,7 @@ batch_y = Rearrange('c (h s1) (w s2) ph pw -> (h w) c s1 s2 ph pw',s1 = 140, s2=
 batch_c = Rearrange('c (h s1) (w s2) ph pw -> (h w) c s1 s2 ph pw',s1 = 70, s2=70)
 
 save = True
-for i in [30]:
+for i in range(10, 101, 10):
     preds=[]
     inputs = []
     res_psnr = Averager()
@@ -48,7 +48,7 @@ for i in [30]:
     q = i
     print('-----'+str(q)+'-----')
     num = 0
-
+    data_path=data_root+"qf_"+str(q)+"/"
     for item in tqdm(sorted(os.listdir(data_path))):
         img_png_ = cv2.imread(data_path+item,-1)
         h,w,_ = img_png_.shape
